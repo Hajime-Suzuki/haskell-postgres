@@ -9,6 +9,7 @@ import           Database.Beam
 import           Database.Beam.Postgres
 import           Data.Text                      ( Text )
 import qualified Database.PostgreSQL.Simple    as PG
+import           DB                             ( getConnection )
 
 data UserT f = User {
     _userEmail :: Columnar f Text,
@@ -52,8 +53,7 @@ getAllUsers conn = runBeamPostgresDebug putStrLn conn $ do
     where allUsers = all_ (_shoppingCartUsers shoppingCartDb)
 
 someFunc = do
-    conn <- PG.connectPostgreSQL
-        "postgres://postgres:secret@localhost:5432/postgres"
+    conn          <- getConnection
     [PG.Only num] <- PG.query_ conn "select 2 + 2" :: IO [PG.Only Int]
     print num
     users <- getAllUsers conn

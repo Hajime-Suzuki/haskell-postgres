@@ -26,6 +26,8 @@ dependencies:
   - pretty-show
   - text
   - postgresql-simple
+  - load-env
+  - utf8-string
 
 library:
   source-dirs: src
