@@ -29,6 +29,7 @@ dependencies:
   - load-env
   - utf8-string
   - string-random
+  - time
 
 library:
   source-dirs: src

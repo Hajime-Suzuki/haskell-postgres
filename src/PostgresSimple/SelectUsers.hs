@@ -15,6 +15,8 @@ import           Database.PostgreSQL.Simple.SqlQQ
 selectUsers = do
   conn <- getConnection
 
+  pPrint =<< (query_ conn "SELECT * FROM users" :: IO [User])
+
   pPrint
     =<< (query conn
                "SELECT * FROM users WHERE first_name = ? and last_name = ?"
@@ -22,11 +24,9 @@ selectUsers = do
         ) -- for more than 2 params, use tuple
 
   pPrint
-    .   head
     =<< (query conn "SELECT * FROM users WHERE id = ?" [1 :: Int] :: IO [User]) -- for single params, use singleton list
 
   pPrint
-    .   head
     =<< (query
           conn
           [sql| 

@@ -12,8 +12,3 @@ updateUser id = do
     conn
     "UPDATE users set first_name = ? where id = ?"
     ("updated!!" :: String, id :: Int)
-
-
-
-
-

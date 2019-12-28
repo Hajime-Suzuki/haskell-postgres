@@ -12,7 +12,3 @@ addUsers = do
     conn
     "INSERT INTO users (first_name,last_name) VALUES (?,?)"
     ([("I am", "Test"), ("John", "Doe")] :: [(String, String)])
-
-
-
-
