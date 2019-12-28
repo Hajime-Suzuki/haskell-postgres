@@ -4,6 +4,7 @@ import           PostgresSimple.SelectUsers
 import           PostgresSimple.AddUser
 import           PostgresSimple.AddUsers
 import           PostgresSimple.UpdateUser
+import           PostgresSimple.DeleteUser
 import           LoadEnv                        ( loadEnvFrom )
 
 main = do
@@ -17,5 +18,6 @@ main = do
   putStrLn "=== add users ===\n"
   addUsers
   putStrLn "=== update user ===\n"
-  updateUser
-
+  updateUser 10
+  putStrLn "=== delete user ===\n"
+  deleteUser 100

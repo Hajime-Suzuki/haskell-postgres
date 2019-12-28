@@ -6,12 +6,12 @@ import           Database.PostgreSQL.Simple
 import           DB                             ( getConnection )
 import           Text.StringRandom
 
-updateUser = do
+updateUser id = do
   conn <- getConnection
   print . ("affeted: " ++) . show =<< execute
     conn
     "UPDATE users set first_name = ? where id = ?"
-    ("updated!!" :: String, 1 :: Int)
+    ("updated!!" :: String, id :: Int)
 
 
 
