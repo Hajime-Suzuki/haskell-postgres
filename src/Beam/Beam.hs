@@ -1,6 +1,6 @@
 {-# LANGUAGE DeriveGeneric, OverloadedStrings, FlexibleContexts, FlexibleInstances, TypeFamilies, TypeApplications, DeriveAnyClass,StandaloneDeriving,TypeSynonymInstances #-}
 
-module Lib
+module Beam.Beam
     ( someFunc
     )
 where

@@ -1,10 +1,21 @@
 module Main where
 
--- import           Lib
-import           PostgresSimple
+import           PostgresSimple.SelectUsers
+import           PostgresSimple.AddUser
+import           PostgresSimple.AddUsers
+import           PostgresSimple.UpdateUser
 import           LoadEnv                        ( loadEnvFrom )
 
 main = do
   loadEnvFrom ".env"
-  postgresSimple
-  selectItems
+  putStrLn "=== select users ===\n"
+  selectUsers
+  putStrLn $ '\n' : replicate 30 '='
+  putStrLn "=== add user ===\n"
+  addUser
+  putStrLn $ '\n' : replicate 30 '='
+  putStrLn "=== add users ===\n"
+  addUsers
+  putStrLn "=== update user ===\n"
+  updateUser
+

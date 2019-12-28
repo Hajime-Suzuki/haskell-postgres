@@ -28,6 +28,7 @@ dependencies:
   - postgresql-simple
   - load-env
   - utf8-string
+  - string-random
 
 library:
   source-dirs: src
